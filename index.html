@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Parente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/scripts/jquery.js"></script>
+</head>
+<body style="background-color: #161616;">
+    <div class="fixed w-full backdrop-blur-sm h-20">
+        <div class="absolute flex flex-1 items-center mt-2 ml-2">
+            <img src="assets/img/icon.png" class="h-16">
+        </div>
+
+        <div class="absolute flex flex-1 justify-center items-center md:mt-5 w-full">
+            <a href="#home" class="text-white text-xl transition-all duration-300 hover:text-blue-500">Accueil</a>
+            <a href="#about" class="text-white text-xl ml-10 transition-all duration-300 hover:text-blue-500">A propos</a>
+            <a href="#contact" class="text-white text-xl ml-10 transition-all duration-300 hover:text-blue-500">Contact</a>
+        </div>
+        
+        <div class="absolute flex flex-1 mt-5 md:mr-3 float-right text-right right-0">
+            <a href="https://github.com/par-sam">
+                <img src="assets/img/github.png" class="h-8">
+            </a>
+            <a href="https://www.linkedin.com/">
+                <img src="assets/img/linkedin.png" class="h-8 ml-5">
+            </a>
+        </div>
+    </div>
+
+    <div class="fixed flex w-full h-full items-center justify-center backdrop-blur-sm hidden" id="modal">
+        <form class="w-1/2 bg-white rounded-2xl p-5">
+            <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Formulaire de contact</h1>
+            <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nom</label>
+            <input id="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="John Doe" />
+            
+            <label for="email" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Adresse Mail</label>
+            <input id="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="johndoe@gmail.com" />
+
+            <label for="message" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Message</label>
+            <textarea id="message" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-24 md:h-32 flex items-center pl-3 text-sm border-gray-300 rounded border resize-none" placeholder="Votre message"></textarea>
+
+            <div class="flex items-center justify-start w-full">
+                <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" id="form_send">Envoyer</button>
+                <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" onclick="modalHandler()">Annuler</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="fixed flex items-center flex-col md:flex-row right-0 bottom-0 m-5 bg-white rounded-2xl p-5 hidden" id="notif">
+        <img id="notif_icon" src="assets/img/check.png" class="w-10 h-10">
+        <div class="flex flex-col md:ml-5">
+            <h2 class="text-gray-800 text-xl font-bold tracking-normal leading-tight mb-2" id="notif_title">NOTIFICATION_TITLE</h2>
+            <p class="text-gray-800 text-sm font-normal tracking-normal leading-tight" id="notif_content">NOTIFICATION_CONTENT</p>
+        </div>
+    </div>
+
+    <div id="home" class="flex flex-col justify-center items-center h-screen">
+        <h1 class="text-white text-3xl md:text-5xl">Samuel Parente</h1>
+        <h2 class="text-white text-xl md:text-2xl mt-2">Developpeur JavaScript & Web</h2>
+    </div>
+
+    <div id="about" class="flex flex-col justify-center items-center h-screen">
+        <h1 class="text-white text-3xl md:text-5xl">A propos</h1>
+        <h2 class="text-white text-xl md:text-2xl mt-2">
+            Je suis un développeur web passionné par le développement et l'informatique.
+        </h2>
+    </div>
+
+    <div id="contact" class="flex flex-col justify-center items-center h-screen">
+        <h1 class="text-white text-3xl md:text-5xl">Contact</h1>
+
+        <h2 class="text-white text-xl md:text-2xl mt-2">
+            Vous souhaitez me contacter? Vous pouvez me joindre via le formulaire ci-dessous.
+        </h2>
+
+        <button id="form_btn" class="mt-5 bg-blue-500 px-5 py-3 rounded-full text-white text-lg">Me contacter</button>
+    </div>
+
+    <script src="/assets/scripts/main.js"></script>
+</body>
+</html>
